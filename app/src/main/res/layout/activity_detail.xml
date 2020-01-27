@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.udacity.sandwichclub.DetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/image_iv"
@@ -18,15 +22,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textColor="@color/black"
         android:text="@string/detail_place_of_origin_label"
         android:textStyle="bold"
+        android:layout_centerVertical="true"
         android:layout_below="@id/image_iv" />
     <TextView
         android:id="@+id/origin_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:layout_below="@id/image_iv"
+        android:textSize="18dp"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignBottom="@id/title_origin_tv"
         android:layout_toRightOf="@id/title_origin_tv"/>
 
     <TextView
@@ -34,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textColor="@color/black"
         android:text="@string/detail_also_known_as_label"
         android:textStyle="bold"
         android:layout_below="@id/origin_tv"/>
@@ -41,8 +50,8 @@
         android:id="@+id/also_known_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:layout_below="@id/origin_tv"
+        android:textSize="18dp"
+        android:layout_alignTop="@id/title_also_known_tv"
         android:layout_toRightOf="@id/title_also_known_tv"/>
 
     <TextView
@@ -50,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textColor="@color/black"
         android:text="@string/detail_ingredients_label"
         android:textStyle="bold"
         android:layout_below="@id/also_known_tv"/>
@@ -57,7 +67,8 @@
         android:id="@+id/ingredients_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="18dp"
+        android:layout_marginLeft="8dp"
         android:layout_below="@id/title_ingredients_tv"/>
 
     <TextView
@@ -65,6 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textColor="@color/black"
         android:text="@string/detail_description_label"
         android:textStyle="bold"
         android:layout_below="@id/ingredients_tv"/>
@@ -72,14 +84,9 @@
         android:id="@+id/description_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:scrollHorizontally="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_below="@id/title_ingredients_tv"/>
+        android:textSize="18dp"
+        android:layout_below="@id/title_description_tv"/>
 
+    </RelativeLayout>
 
-
-</RelativeLayout>
+</ScrollView>

@@ -3,7 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
-import org.w3c.dom.Text;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -91,6 +90,11 @@ public class DetailActivity extends AppCompatActivity {
 
         utilsTextView(originTv, titleOriginTv, sandwich.getPlaceOfOrigin());
         utilsTextView(descriptionTv, titleDescriptionTv, sandwich.getDescription());
+        String alsoKnownAs = TextUtils.join(", ", sandwich.getAlsoKnownAs());
+        utilsTextView(alsoKnownTv, titleAlsoKnownTv, alsoKnownAs);
+        String ingredients = TextUtils.join("\n", sandwich.getIngredients());
+        utilsTextView(ingredientsTv, titleIngredientsTv, ingredients);
+
 
 
         //ingredientsTv ;
@@ -98,7 +102,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void utilsTextView(TextView textView, TextView titleTextView, String string) {
-        if (string != null) {
+        if (!string.isEmpty() && string != null) {
             textView.setText(string);
         } else {
             textView.setVisibility(View.INVISIBLE);
