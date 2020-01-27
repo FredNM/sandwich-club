@@ -34,7 +34,7 @@
         android:textSize="18dp"
         android:gravity="center_vertical"
         android:layout_centerVertical="true"
-        android:layout_alignBottom="@id/title_origin_tv"
+        android:layout_alignBaseline="@+id/title_origin_tv"
         android:layout_toRightOf="@id/title_origin_tv"/>
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        android:layout_alignTop="@id/title_also_known_tv"
+        android:layout_alignBaseline="@id/title_also_known_tv"
         android:layout_toRightOf="@id/title_also_known_tv"/>
 
     <TextView
